@@ -1,0 +1,116 @@
+// Written by scripts/gen_games.py from games.toml (the app's and the cores'): edit those, not this.
+
+extension GameInfo {
+    /// Every set the app knows, in the library's order (a card's versions in this order).
+    static let catalog: [GameInfo] = [
+        GameInfo(id: "daytona93", title: "Daytona USA", detail: "1993", platform: .model2, controls: .drive),
+        GameInfo(id: "daytona", title: "Daytona USA", detail: "1994, Revision A (link play)", platform: .model2, controls: .drive, link: true),
+        GameInfo(id: "srallyc", title: "Sega Rally Championship", detail: "1995, Revision C (Model 2A; link play)", platform: .model2, controls: .drive, link: true),
+        GameInfo(id: "manxttc", title: "Manx TT Superbike", detail: "1995, Revision C, Twin (Model 2A; link play)", platform: .model2, controls: .drive, link: true),
+        GameInfo(id: "motoraid", title: "Motor Raid", detail: "1997, Twin (Model 2A; X punch, A kick)", platform: .model2, controls: .drive),
+        GameInfo(id: "doab", title: "Dead or Alive", detail: "1996, Revision B (Model 2B; X punch, A kick, B hold; two players: a second controller)", platform: .model2, controls: .fighting, players: 2),
+        GameInfo(id: "lastbrnx", title: "Last Bronx", detail: "1996, Export, Revision A (Model 2B; X punch, A kick, B guard; two players: a second controller)", platform: .model2, controls: .fighting, players: 2),
+        GameInfo(id: "schamp", title: "Sonic Championship", detail: "1996, USA (Model 2B; X punch, A kick, B barrier; two players: a second controller)", platform: .model2, controls: .fighting, players: 2),
+        GameInfo(id: "dynabb97", title: "Dynamite Baseball 97", detail: "1997, Revision A (Model 2B; X and A the buttons, B swings the bat; two players: a second controller)", platform: .model2, controls: .fighting, players: 2, categoryOverride: .other),
+        GameInfo(id: "waverunr", title: "Wave Runner", detail: "1996, Japan, Revision A (Model 2C; the right trigger is the throttle lever)", platform: .model2, controls: .drive),
+        GameInfo(id: "bel", title: "Behind Enemy Lines", detail: "1997 (Model 2C; gun turret: mouse or touch; X the missile)", platform: .model2, controls: .turret),
+        GameInfo(id: "topskatr", title: "Top Skater", detail: "1997, Export, Revision A (Model 2C; the left stick curves and slides, A and B jump, the shoulders select)", platform: .model2, controls: .drive, stickY: true),
+        GameInfo(id: "skisuprg", title: "Sega Ski Super G", detail: "1996 (Model 2C; A, B and X select, the shoulders zoom, the stick swings)", platform: .model2, controls: .drive, stickY: true),
+        GameInfo(id: "segawski", title: "Sega Water Ski", detail: "1997, Japan, Revision A (Model 2C; Start is set, X and B the pitch buttons, the d-pad selects)", platform: .model2, controls: .drive),
+        GameInfo(id: "desert", title: "Desert Tank", detail: "1994 (right shoulder machine gun, left shoulder cannon, A/B/X VR1-3, Y shift)", platform: .model2, controls: .drive, categoryOverride: .other),
+        GameInfo(id: "skytargt", title: "Sky Target", detail: "1995 (Model 2A; the left stick flies, A machine gun, B missile, X view change)", platform: .model2, controls: .flight),
+        GameInfo(id: "dynamcop", title: "Dynamite Cop", detail: "1998, Export (Model 2A; X punch, A kick, B jump; two players: a second controller)", platform: .model2, controls: .fighting, players: 2),
+        GameInfo(id: "vcop2", title: "Virtua Cop 2", detail: "1995 (Model 2A; light gun: mouse or touch)", platform: .model2, controls: .gun),
+        GameInfo(id: "vcop", title: "Virtua Cop", detail: "1994, Revision B (light gun: mouse or touch)", platform: .model2, controls: .gun),
+        GameInfo(id: "vf2", title: "Virtua Fighter 2", detail: "1994, Version 2.1 (Model 2A; two players: a second controller)", platform: .model2, controls: .fighting, players: 2),
+        GameInfo(id: "indy500", title: "INDY 500", detail: "1995, Twin, Revision A (Model 2B; link play)", platform: .model2, controls: .drive, link: true),
+        GameInfo(id: "fvipers", title: "Fighting Vipers", detail: "1995, Revision D (Model 2B; two players: a second controller)", platform: .model2, controls: .fighting, players: 2),
+        GameInfo(id: "sgt24h", title: "Super GT 24h", detail: "1996, Jaleco (Model 2B)", platform: .model2, controls: .drive),
+        GameInfo(id: "overrevb", title: "Over Rev", detail: "1997, Jaleco (Model 2B; link play)", platform: .model2, controls: .drive, link: true),
+        GameInfo(id: "stcc", title: "Sega Touring Car Championship", detail: "1996 (Model 2C; link play)", platform: .model2, controls: .drive, link: true),
+        GameInfo(id: "vstriker", title: "Virtua Striker", detail: "1994, Revision A (Model 2B; X long pass, A shoot, B short pass; two players: a second controller)", platform: .model2, controls: .fighting, players: 2, categoryOverride: .other),
+        GameInfo(id: "zerogun", title: "Zero Gunner", detail: "1997, Export (Model 2B; X shot, A special; two players: a second controller)", platform: .model2, controls: .fighting, players: 2, categoryOverride: .shooter),
+        GameInfo(id: "pltkids", title: "Pilot Kids", detail: "1998, Revision A (Model 2B; X shot, A special; two players: a second controller)", platform: .model2, controls: .fighting, players: 2, categoryOverride: .shooter),
+        GameInfo(id: "rchase2", title: "Rail Chase 2", detail: "1994, Revision A (Model 2B; gun turret: mouse or touch; two players: a second controller)", platform: .model2, controls: .turret, players: 2),
+        GameInfo(id: "gunblade", title: "Gunblade NY", detail: "1995, Revision A (Model 2B; gun turret: mouse or touch)", platform: .model2, controls: .turret),
+        GameInfo(id: "hotdo", title: "The House of the Dead", detail: "1997 (Model 2C; light gun: mouse or touch)", platform: .model2, controls: .gun),
+        GameInfo(id: "von", title: "Cyber Troopers Virtual-On", detail: "1995, Twin, Export (Model 2B; both sticks of the controller; link play)", platform: .model2, controls: .twin, link: true),
+        GameInfo(id: "vr", title: "Virtua Racing", detail: "1992 (link play)", platform: .model1, controls: .drive, link: true),
+        GameInfo(id: "vformula", title: "Virtua Formula", detail: "1993 (link play)", platform: .model1, controls: .drive, link: true),
+        GameInfo(id: "swa", title: "Star Wars Arcade", detail: "1993 (the left stick flies)", platform: .model1, controls: .flight),
+        GameInfo(id: "vf", title: "Virtua Fighter", detail: "1993 (two players: a second controller)", platform: .model1, controls: .fighting, players: 2),
+        GameInfo(id: "wingwar", title: "Wing War", detail: "1994 (the left stick flies)", platform: .model1, controls: .flight),
+        GameInfo(id: "vf3", title: "Virtua Fighter 3", detail: "1996 (two players: a second controller)", platform: .model3, controls: .fighting, players: 2),
+        GameInfo(id: "scud", title: "Scud Race", detail: "1996 (link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "scudplus", title: "Scud Race", detail: "1997, Scud Race Plus (link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "daytona2", title: "Daytona USA 2", detail: "1998, Battle on the Edge (link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "dayto2pe", title: "Daytona USA 2", detail: "1998, Power Edition (link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "srally2", title: "Sega Rally 2", detail: "1998 (A view change, B hand brake; link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "lemans24", title: "Le Mans 24", detail: "1997 (link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "dirtdvls", title: "Dirt Devils", detail: "1998 (A view change; link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "harley", title: "Harley-Davidson & L.A. Riders", detail: "1997 (A view change, B music select; two coins per credit; link play)", platform: .model3, controls: .drive, link: true),
+        GameInfo(id: "ecau", title: "Emergency Call Ambulance", detail: "1999 (A view change)", platform: .model3, controls: .drive),
+        GameInfo(id: "fvipers2", title: "Fighting Vipers 2", detail: "1998 (X punch, A kick, B guard; two players: a second controller)", platform: .model3, controls: .fighting, players: 2),
+        GameInfo(id: "von2", title: "Cyber Troopers Virtual-On Oratorio Tangram", detail: "1998 (both sticks of the controller; two coins per credit)", platform: .model3, controls: .twin),
+        GameInfo(id: "spikeout", title: "Spikeout", detail: "1998 (X beat, A charge, B shift, Y jump)", platform: .model3, controls: .fighting),
+        GameInfo(id: "spikeofe", title: "Spikeout", detail: "1999, Final Edition (X beat, A charge, B shift, Y jump)", platform: .model3, controls: .fighting),
+        GameInfo(id: "vs299a", title: "Virtua Striker 2 '99", detail: "1999 (X short pass, A long pass, B shoot; two players: a second controller)", platform: .model3, controls: .fighting, players: 2, categoryOverride: .other),
+        GameInfo(id: "swtrilgy", title: "Star Wars Trilogy Arcade", detail: "1998 (the left stick flies, left shoulder second trigger, B/X event buttons)", platform: .model3, controls: .flight),
+        GameInfo(id: "lostwsga", title: "The Lost World", detail: "1997 (light gun: mouse or touch; right button reloads)", platform: .model3, controls: .analogGun),
+        GameInfo(id: "lamachin", title: "L.A. Machineguns", detail: "1998 (light gun: mouse or touch)", platform: .model3, controls: .analogGun),
+        GameInfo(id: "oceanhuna", title: "The Ocean Hunter", detail: "1998 (light gun: mouse or touch; two coins per credit)", platform: .model3, controls: .analogGun),
+        GameInfo(id: "bassdx", title: "Sega Bass Fishing", detail: "1998, Deluxe, USA (the left stick is the rod, the right trigger reels, the d-pad the lure stick, X casts, A selects)", platform: .model3, controls: .fishing, stickY: true),
+        GameInfo(id: "getbass", title: "Get Bass", detail: "1998, Japan, Standard (the left stick is the rod, the right trigger reels, X casts)", platform: .model3, controls: .fishing, stickY: true),
+        GameInfo(id: "getbassur", title: "Get Bass", detail: "1998, Japan, Upright (the left stick is the rod, the right trigger reels, X casts)", platform: .model3, controls: .fishing, stickY: true),
+        GameInfo(id: "getbassdx", title: "Get Bass", detail: "1998, Japan, Deluxe (needs bassdx.zip beside it; the left stick is the rod, the right trigger reels, X casts; two coins per credit)", platform: .model3, controls: .fishing, stickY: true),
+        GameInfo(id: "magtruck", title: "Magical Truck Adventure", detail: "1998, Japan (pump the lever: the stick up and down; X the pedal; two players: a second controller)", platform: .model3, controls: .fighting, players: 2, categoryOverride: .other),
+        GameInfo(id: "hotd4a", title: "The House of the Dead 4", detail: "2005, Revision A (light gun: mouse or touch; middle-click, G, X or three fingers throw a grenade; the game folder that holds disk0)", platform: .lindbergh, controls: .gun, gunButton: true),
+        GameInfo(id: "letsgoju", title: "Let's Go Jungle!", detail: "2006, Lost on the Island of Spice (light gun: mouse or touch; hold to fire; Start or X is the action button; the game folder that holds disk0)", platform: .lindbergh, controls: .gun),
+        GameInfo(id: "segartv", title: "Sega Race TV", detail: "2008 (wheel and pedals; the game folder that holds disk0)", platform: .lindbergh, controls: .drive),
+        GameInfo(id: "outr2sdx", title: "OutRun 2 SP SDX", detail: "2006 (wheel and pedals; the game folder that holds disk0)", platform: .lindbergh, controls: .drive),
+        GameInfo(id: "outrun", title: "Out Run", detail: "1986, Revision B (Out Run board; the shoulders move the gear lever: low and high)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "shangon", title: "Super Hang-On", detail: "1987, Sit-down/upright (Out Run board; the right shoulder or A is the turbo)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "aburner131", title: "After Burner", detail: "1987, VER 1.31, deluxe/upright (X Board; the left stick flies; A or the right shoulder fires the vulcan, B the missiles)", platform: .classic2d, controls: .flight),
+        GameInfo(id: "aburner2", title: "After Burner II", detail: "1987 (X Board; the left stick flies, the right trigger is the throttle; A or the right shoulder fires the vulcan, B the missiles)", platform: .classic2d, controls: .flight),
+        GameInfo(id: "rachero", title: "Racing Hero", detail: "1989 (X Board; lean with the left stick; the right trigger is the throttle, the left the brake)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "loffire", title: "Line of Fire", detail: "1989, World (X Board; light gun: mouse or touch; two gun turrets, X fires a missile; two players: a second controller)", platform: .classic2d, controls: .gun, players: 2, gunButton: true),
+        GameInfo(id: "gprider", title: "GP Rider", detail: "1990, World (X Board; lean with the left stick; the right trigger is the throttle, the left the brake, the shoulders shift up and down)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "smgp", title: "Super Monaco GP", detail: "1989, World, upright (X Board; steer with the left stick; the right trigger accelerates, the left brakes, the shoulders shift up and down)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "thndrbld", title: "Thunder Blade", detail: "1987, Upright (X Board; the left stick flies, the right trigger is the throttle; A or the right shoulder fires the guns, B the missiles)", platform: .classic2d, controls: .flight),
+        GameInfo(id: "toutrun", title: "Turbo Out Run", detail: "1989, Out Run upgrade (Out Run board; the shoulders move the gear lever: low and high; A is the turbo)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "orunners", title: "OutRunners", detail: "1992, World (System 32; the shoulders shift; A, B and X choose the music)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "hangon", title: "Hang-On", detail: "1985, Upright/ride-on (Hang-On board; lean with the left stick; the right trigger is the throttle, the left the brake)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "sharrier", title: "Space Harrier", detail: "1985, Rev A, upright/sit-down (Hang-On board; the left stick flies; A or the right shoulder fires)", platform: .classic2d, controls: .flight),
+        GameInfo(id: "enduror", title: "Enduro Racer", detail: "1986, Rev A, YM2151 (Hang-On board; steer with the left stick and pull it back for a wheelie; the right trigger is the throttle, the left the brake)", platform: .classic2d, controls: .drive, stickY: true),
+        GameInfo(id: "radr", title: "Rad Rally", detail: "1991, World (System 32; the shoulders move the gear lever: low and high)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "radm", title: "Rad Mobile", detail: "1990, World (System 32; A the lights, B the wiper)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "f1en", title: "F1 Exhaust Note", detail: "1991, World, Rev A (System 32; steer to pick automatic or manual and press the gas; with manual the shoulders shift up and down)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "jpark", title: "Jurassic Park", detail: "1993, World, Rev A (System 32; gun turret: mouse or touch; the game draws each gun's sight; two players: a second controller)", platform: .classic2d, controls: .turret, players: 2),
+        GameInfo(id: "sonic", title: "SegaSonic the Hedgehog", detail: "1992, Japan, Rev C (System 32; the stick or d-pad rolls the trackball; X or A spin jumps; two players: a second controller)", platform: .classic2d, controls: .fighting, players: 2, categoryOverride: .other),
+        GameInfo(id: "ga2", title: "Golden Axe: The Revenge of Death Adder", detail: "1992, World, Rev B (System 32; X A B the three buttons; B casts magic; two players: a second controller)", platform: .classic2d, controls: .fighting, players: 2),
+        GameInfo(id: "gforce2", title: "Galaxy Force 2", detail: "1988, World, upright (Y Board; the left stick flies, the right trigger is the throttle; A or the right shoulder fires, B the missiles)", platform: .classic2d, controls: .flight, stickY: true),
+        GameInfo(id: "pdrift", title: "Power Drift", detail: "1988, World, Rev A (Y Board; steer with the left stick; the right trigger accelerates, the left brakes; the shoulders move the gear lever: low and high)", platform: .classic2d, controls: .drive),
+        GameInfo(id: "gloc", title: "G-LOC Air Battle", detail: "1990, World (Y Board; the left stick flies, the right trigger is the throttle; A or the right shoulder fires the vulcan, B the missiles, X the after burner)", platform: .classic2d, controls: .flight, stickY: true),
+        GameInfo(id: "strkfgtr", title: "Strike Fighter", detail: "1991, World (Y Board; the left stick flies, the right trigger is the throttle; A or the right shoulder fires the vulcan, B the missiles, X the after burner)", platform: .classic2d, controls: .flight, stickY: true),
+        GameInfo(id: "rchase", title: "Rail Chase", detail: "1991, World (Y Board; gun turret: mouse or touch; two guns on the rail cars; the game draws each gun's sight; two players: a second controller)", platform: .classic2d, controls: .turret, players: 2),
+        GameInfo(id: "hotd3", title: "The House of the Dead III", detail: "2002 (light gun: mouse or touch; B reloads (the gun's grip, pumped); two players: a second controller; the game folder that holds hod3xb.xbe)", platform: .chihiro, controls: .gun, players: 2),
+        GameInfo(id: "vcop3", title: "Virtua Cop 3", detail: "2003 (light gun: mouse or touch; B reloads; X, middle-click, G or three fingers changes weapon; Y or F is the pedal; two players: a second controller; the game folder that holds vc3.xbe)", platform: .chihiro, controls: .gun, players: 2, gunButton: true),
+        GameInfo(id: "crtaxihr", title: "Crazy Taxi High Roller", detail: "2003 (steer with the left stick; the right trigger accelerates, the left brakes; the right shoulder is Drive, the left Reverse; A or B jumps; the game folder that holds ctx_ac[r].xbe)", platform: .chihiro, controls: .drive),
+    ]
+}
+
+enum GameNames {
+    /// Left out of this release (games.toml's hidden): their cores, controls and saves stay.
+    static let hidden: Set<String> = []
+    /// Other names a set's files may have: MAME's parents and older dumps that hold it,
+    /// and the app's earlier names for it (file name -> set).
+    static let otherNames: [String: String] = ["doa": "doab", "hotd": "hotdo", "hotd4": "hotd4a", "lgj": "letsgoju", "or2sp": "outr2sdx", "vr": "vformula"]
+    /// The app's earlier names for a set (saves and settings move to the new name once).
+    static let renamed: [String: String] = ["hotd4": "hotd4a", "lgj": "letsgoju", "or2sp": "outr2sdx"]
+    /// MAME's device sets a game needs beside it (Wing War's I/O board).
+    static let devices: [String: [String]] = ["wingwar": ["model1io2"], "getbassdx": ["bassdx"]]
+    /// A Chihiro game's XBE, in its folder (set -> file).
+    static let chihiroXbe: [String: String] = ["hotd3": "hod3xb.xbe", "vcop3": "vc3.xbe", "crtaxihr": "ctx_ac[r].xbe"]
+    /// A PC-based game's program, a path in its game folder (set -> path; PCGames).
+    static let pcPrograms: [String: String] = [:]
+}
